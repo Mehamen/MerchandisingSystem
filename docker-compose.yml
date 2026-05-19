@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: merch_pg
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: merchandising
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "S1t2e3.!"
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+      TZ: Europe/Moscow
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # init.sql выполняется автоматически при ПЕРВОМ создании контейнера
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+volumes:
+  pgdata:

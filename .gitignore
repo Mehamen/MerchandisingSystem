@@ -1,0 +1,27 @@
+# ── Visual Studio ──
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ── NuGet ──
+packages/
+*.nupkg
+
+# ── Build artefacts ──
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+[Bb]in/
+[Oo]bj/
+
+# ── Files we don't want in git ──
+*.log
+*.tmp
+Thumbs.db
+.DS_Store
